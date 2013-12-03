@@ -26,17 +26,15 @@ public class NearBuildingService extends HttpServlet {
 		Entity nearbyBuilding = getNearbyBuilding(coordinates, position);
 
 		if(nearbyBuilding == null) {
-			resp.getWriter().write("404"); //TEST
+//			resp.getWriter().write("404"); //TEST
 			resp.setContentType("text/plain");
 			resp.setHeader("status", "0");
-			//TODO
 		} else {
-			resp.getWriter().write((String) nearbyBuilding.getProperty("address")); //TEST
+//			resp.getWriter().write((String) nearbyBuilding.getProperty("address")); //TEST
 			resp.setContentType("text/plain");
 			resp.setHeader("status", "1");
 			resp.setHeader("address", (String) nearbyBuilding.getProperty("address"));
 			resp.setHeader("name", (String) nearbyBuilding.getProperty("name"));
-			//TODO
 		}
 	}
 
